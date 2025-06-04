@@ -34,9 +34,6 @@ obj_dir:
 	@mkdir -p $(OBJ_DIR)
 
 # Rule to create executables (link).
-# Make ensures the object files are built as prerequisites before linking.
-# - $@ is the target (Colleen/Colleen, Grace/Grace or Sully/Sully)
-# - $< is the first prerequisite (obj/Colleen.o, obj/Grace.o or obj Sully.o)
 $(COLLEEN_BIN): $(COLLEEN_OBJ)
 	@echo "Linking $@"
 	@$(CC) $(CFLAGS) -o $@ $<
